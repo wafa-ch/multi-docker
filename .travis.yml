@@ -17,9 +17,10 @@ script:
 # build the prod images
 after_success:
   - docker build -t wafa01/multi-client ./client
+  - docker build -t wafa01/multi-nginx ./nginx
   - docker build -t wafa01/multi-server ./server
   - docker build -t wafa01/multi-worker ./worker
-  - docker build -t wafa01/multi-nginx ./nginx
+
 
 # login into the docker CLI to  put these images in dockerhub
   - echo "$DOCKER-PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
