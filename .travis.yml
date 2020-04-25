@@ -23,7 +23,7 @@ after_success:
 
 
 # login into the docker CLI to  put these images in dockerhub
-  - echo "$DOCKER-PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push wafa01/multi-client
   - docker push wafa01/multi-nginx
   - docker push wafa01/multi-server
